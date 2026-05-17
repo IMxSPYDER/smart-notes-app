@@ -8,6 +8,7 @@ import {
   XCircle,
   UserPlus
 } from "lucide-react";
+import { useState } from "react";
 
 const Register = () => {
   const navigate = useNavigate();
