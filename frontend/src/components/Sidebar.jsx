@@ -5,7 +5,7 @@ const navItems = [
   {
     title: "Notes",
     subtitle: "All notes in one place",
-    path: "/",
+    path: "/dashboard",
     icon: Home
   },
   {
