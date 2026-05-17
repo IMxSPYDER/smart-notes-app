@@ -1,8 +1,14 @@
 import { useState, useContext } from "react";
 import API from "../api/axios";
-import { useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  Link
+} from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { CheckCircle, XCircle } from "lucide-react";
+import {
+  CheckCircle,
+  XCircle
+} from "lucide-react";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,7 +19,8 @@ const Login = () => {
     password: ""
   });
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] =
+    useState(false);
 
   const [popup, setPopup] = useState({
     show: false,
@@ -43,7 +50,10 @@ const Login = () => {
     try {
       setLoading(true);
 
-      const res = await API.post("/login", form);
+      const res = await API.post(
+        "/login",
+        form
+      );
 
       login(res.data.access_token);
 
@@ -163,12 +173,25 @@ const Login = () => {
               : "bg-green-500 hover:bg-green-600 hover:scale-[1.02]"
           }`}
         >
-          {loading ? "Logging in..." : "Login"}
+          {loading
+            ? "Logging in..."
+            : "Login"}
         </button>
 
+        {/* Register Link */}
+        <p className="text-center text-slate-400 mt-5 text-sm">
+          New User?{" "}
+          <Link
+            to="/register"
+            className="text-green-400 hover:text-green-300 font-semibold transition"
+          >
+            Register
+          </Link>
+        </p>
+
         {/* Footer */}
-        <p className="text-center text-slate-400 mt-6 text-sm">
-          Secure Login System 
+        <p className="text-center text-slate-500 mt-4 text-sm">
+          Secure Login System
         </p>
       </form>
     </div>

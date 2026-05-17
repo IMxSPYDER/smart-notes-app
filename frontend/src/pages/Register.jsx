@@ -1,6 +1,8 @@
-import { useState } from "react";
 import API from "../api/axios";
-import { useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  Link
+} from "react-router-dom";
 import {
   CheckCircle,
   XCircle,
@@ -173,9 +175,20 @@ const Register = () => {
             : "Register"}
         </button>
 
+        {/* Login Link */}
+        <p className="text-center text-slate-400 mt-5 text-sm">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-blue-400 hover:text-blue-300 font-semibold transition"
+          >
+            Login
+          </Link>
+        </p>
+
         {/* Footer */}
-        <p className="text-center text-slate-400 mt-6 text-sm">
-          Join us today ✨
+        <p className="text-center text-slate-500 mt-4 text-sm">
+          Join us today
         </p>
       </form>
     </div>
